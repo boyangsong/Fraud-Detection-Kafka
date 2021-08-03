@@ -15,8 +15,8 @@ if __name__ == "__main__":
         # Encode all values as JSON
         value_serializer=lambda value: json.dumps(value).encode(),
     )
-while True:
-    transaction: dict = create_random_transaction()
-    producer.send(TRANSACTIONS_TOPIC, value=transaction)
-    print(transaction) # DEBUG
-    sleep(SLEEP_TIME)
+    while True:
+        transaction: dict = create_random_transaction()
+        producer.send(TRANSACTIONS_TOPIC, value=transaction)
+        print(transaction) # DEBUG
+        sleep(SLEEP_TIME)
